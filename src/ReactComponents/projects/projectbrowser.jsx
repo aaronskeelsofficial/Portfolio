@@ -496,7 +496,7 @@ export default function(props) {
               project8.date = "2020/04/29";
               project8.icon = "/src/img/projects/arduino_min.webp";
               project8.redirect = "/projects/avionicsreadout.html";
-              project8.previewmedia = "https://aaronskeels.work/src/img/projects/avionicsreadout/schematic.png";
+              project8.previewmedia = "/src/img/projects/avionicsreadout/schematic.png";
               projectDatabase.push(project8);
   
               let project9 = new Object();
@@ -508,7 +508,7 @@ export default function(props) {
               project9.icon = "/src/img/projects/unrealengine_min.webp";
               project9.redirect = "/projects/fallguysclone.html";
               project9.pinned = true;
-              project9.previewmedia = "https://aaronskeels.work/src/img/projects/fallguysclone/rig.png";
+              project9.previewmedia = "/src/img/projects/fallguysclone/rig.png";
               projectDatabase.push(project9);
   
               let project10 = new Object();
@@ -519,7 +519,7 @@ export default function(props) {
               project10.date = "2020/11/01";
               project10.icon = "/src/img/projects/matlab_min.webp";
               project10.redirect = "/projects/sensitivityanalysis.html";
-              project10.previewmedia = "https://aaronskeels.work/src/img/projects/sensitivityanalysis/model.png";
+              project10.previewmedia = "/src/img/projects/sensitivityanalysis/model.png";
               projectDatabase.push(project10);
   
               let project11 = new Object();
@@ -530,7 +530,7 @@ export default function(props) {
               project11.date = "2020/11/23";
               project11.icon = "/src/img/projects/matlab_min.webp";
               project11.redirect = "/projects/sourcepanelmethod.html";
-              project11.previewmedia = "https://aaronskeels.work/src/img/projects/sourcepanelmethod/data1.png";
+              project11.previewmedia = "/src/img/projects/sourcepanelmethod/data1.png";
               projectDatabase.push(project11);
   
               let project12 = new Object();
@@ -562,7 +562,7 @@ export default function(props) {
               project14.date = "2021/03/17";
               project14.icon = "/src/img/projects/unrealengine_min.webp";
               project14.redirect = "/projects/prolateoblatesimulation.html";
-              project14.previewmedia = "https://aaronskeels.work/src/img/projects/prolateoblatesimulation/Sample1.png";
+              project14.previewmedia = "/src/img/projects/prolateoblatesimulation/Sample1.png";
               projectDatabase.push(project14);
 
               let project15a = new Object();
@@ -583,7 +583,7 @@ export default function(props) {
               project15b.date = "2021/07/24";
               project15b.icon = "/src/img/projects/discord_min.webp";
               project15b.redirect = "/projects/aroserver.html";
-              project15b.previewmedia = "https://aaronskeels.work/src/img/projects/aroserver/1.png";
+              project15b.previewmedia = "/src/img/projects/aroserver/1.png";
               projectDatabase.push(project15b);
   
               let project15 = new Object();
@@ -594,7 +594,7 @@ export default function(props) {
               project15.date = "2021/07/29";
               project15.icon = "/src/img/projects/web_min.webp";
               project15.redirect = "/projects/sqlaccounts.html";
-              project15.previewmedia = "https://aaronskeels.work/src/img/projects/sqlaccounts/demo.png";
+              project15.previewmedia = "/src/img/projects/sqlaccounts/demo.png";
               projectDatabase.push(project15);
   
               let project16 = new Object();
@@ -605,7 +605,7 @@ export default function(props) {
               project16.date = "2021/07/31";
               project16.icon = "/src/img/projects/js_min.webp";
               project16.redirect = "/projects/diffiehellmanchat.html";
-              project16.previewmedia = "https://aaronskeels.work/src/img/projects/diffiehellmanchat/demo.png";
+              project16.previewmedia = "/src/img/projects/diffiehellmanchat/demo.png";
               projectDatabase.push(project16);
   
               let project18 = new Object();
@@ -639,7 +639,7 @@ export default function(props) {
               project20.icon = "/src/img/projects/rocket_min.webp";
               project20.redirect = "/projects/emrysspacedesignfinal.html";
               project20.pinned = true;
-              project20.previewmedia = "https://aaronskeels.work/src/img/projects/emrysspacedesignfinal/Example.png";
+              project20.previewmedia = "/src/img/projects/emrysspacedesignfinal/Example.png";
               projectDatabase.push(project20);
   
               let project21 = new Object();
@@ -650,7 +650,7 @@ export default function(props) {
               project21.date = "2022/08/18";
               project21.icon = "/src/img/projects/replit_min.webp";
               project21.redirect = "/projects/musicutility.html";
-              project21.previewmedia = "https://aaronskeels.work/src/img/projects/musicutility/Example.png";
+              project21.previewmedia = "/src/img/projects/musicutility/Example.png";
               projectDatabase.push(project21);
   
               let project22 = new Object();
@@ -661,7 +661,7 @@ export default function(props) {
               project22.date = "2022/08/18";
               project22.icon = "/src/img/projects/rpi_min.webp";
               project22.redirect = "/projects/lightalert.html";
-              project22.previewmedia = "https://aaronskeels.work/src/img/projects/lightalert/Example.png";
+              project22.previewmedia = "/src/img/projects/lightalert/Example.png";
               projectDatabase.push(project22);
   
               let project23 = new Object();
@@ -672,7 +672,7 @@ export default function(props) {
               project23.date = "2022/10/11";
               project23.icon = "/src/img/projects/js_min.webp";
               project23.redirect = "/projects/blackjacksimulator.html";
-              project23.previewmedia = "https://aaronskeels.work/src/img/projects/blackjacksimulator/Example.png";
+              project23.previewmedia = "/src/img/projects/blackjacksimulator/Example.png";
               projectDatabase.push(project23);
   
               let project24 = new Object();
@@ -683,7 +683,7 @@ export default function(props) {
               project24.date = "2022/11/16";
               project24.icon = "/src/img/projects/shopify_min.webp";
               project24.redirect = "/projects/bluebrainplanet.html";
-              project24.previewmedia = "https://aaronskeels.work/src/img/projects/bluebrainplanet/Home.png";
+              project24.previewmedia = "/src/img/projects/bluebrainplanet/Home.png";
               projectDatabase.push(project24);
   
               let project25 = new Object();
@@ -694,7 +694,7 @@ export default function(props) {
               project25.date = "2022/12/31";
               project25.icon = "/src/img/projects/youtube_min.webp";
               project25.redirect = "/projects/youtubeanalyzer.html";
-              project25.previewmedia = "https://aaronskeels.work/src/img/projects/youtubeanalyzer/2.png";
+              project25.previewmedia = "/src/img/projects/youtubeanalyzer/2.png";
               projectDatabase.push(project25);
 
               let project26 = new Object();
@@ -706,7 +706,7 @@ export default function(props) {
               project26.icon = "/src/img/projects/web_min.webp";
               project26.redirect = "/projects/portfoliosite.html";
               project26.pinned = true;
-              project26.previewmedia = "https://aaronskeels.work/src/img/projects/portfoliosite/Example.png";
+              project26.previewmedia = "/src/img/projects/portfoliosite/Example.png";
               projectDatabase.push(project26);
 
               let project27 = new Object();
