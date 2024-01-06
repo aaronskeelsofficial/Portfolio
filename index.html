@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <title>I Am Aaron Skeels</title>
+
+    <!-- Load Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet';">
+    <!-- Default Font -->
+    <style>
+      * {
+        font-family: "Raleway", sans-serif;
+      }
+      p,span,a {
+        color: rgb(211, 211, 211);
+      }
+    </style>
+
+    <!-- Special For index.html. Preload LCP image which is added dynamically bc google lighthouse says to -->
+    <link rel="preload" fetchpriority="high" as="image" href="/src/img/bg-stars.png" type="image/png">
+    
+  </head>
+  <body style="overflow: hidden; background-color: rgb(34, 39, 51)">
+    <div id="root" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); overflow: hidden"></div>
+    <script type="module" src="/src/ReactComponents/index/index.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cursor Snail, Scroll Bend, Scroll Strikthrough</title>
+    <style>
+      @font-face {
+        font-family: "Hero";
+        src: url(/projects/portfoliomimicrypart1/heroout.ttf) format("truetype"); /*https://www.fontzillion.com/fonts/jonathan-smith/hero*/
+      }
+      body {
+        margin: 0px;
+        overflow-x: hidden;
+      }
+      .circle {
+        position: absolute;
+        right: -15rem;
+        top: 25svh;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 50%;
+        background: #e8b297;
+        z-index: -1;
+      }
+      .main {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .name {
+        font-family: "Hero";
+        font-size: 220px;
+        color: #e8b297;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        user-select: none;
+        z-index: 1;
+      }
+      .cursor {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+        z-index: 4;
+        pointer-events: none;
+        transition: width .1s ease-in, height .1s ease-in;
+      }
+      .imagespawner {
+        width: 100svw;
+        height: 100svh;
+        z-index: 2;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+      .topwarp {
+        width: 100%;
+        height: 20%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        overflow: hidden;
+        background-color: green;
+      }
+      .nav {
+        position: absolute;
+        left: 10rem;
+        top: 10rem;
+        min-width: 100px;
+        min-height: 100px;
+        z-index: 3;
+        font-family: HelveticaT,Arial,Verdana,Sans-Serif;
+        font-weight: 700;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        font-size: 150%;
+      }
+      .nav:hover ~ .cursor {
+        mix-blend-mode: difference;
+        width: 42px;
+        height: 42px;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="name"><p>AARON<br>SKEELS</p></div>
+      <div class="circle"></div>
+      <div class="imageholder"></div>
+    </div>
+    <div class="imagespawner">
+      <script>
+        if (true) {
+          let imgspawner = document.getElementsByClassName("imagespawner")[0];
+          let curImgIndex = 0;
+          const IMGINTERVALDB = new Object();
+          const IMGTIMEOUTDB = new Object();
+          function ClearIntTimeDB(img) {
+            for (let intID of IMGINTERVALDB[img.src])
+              clearInterval(intID);
+            for (let timID of IMGTIMEOUTDB[img.src])
+              clearTimeout(timID);
+          }
+          const IMGSRCDB = ["https://images.pexels.com/photos/3687770/pexels-photo-3687770.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/2607544/pexels-photo-2607544.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/3658120/pexels-photo-3658120.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/4587971/pexels-photo-4587971.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/4588052/pexels-photo-4588052.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/4588435/pexels-photo-4588435.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/3299906/pexels-photo-3299906.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/2951921/pexels-photo-2951921.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/3671300/pexels-photo-3671300.jpeg?auto=compress&cs=tinysrgb&w=1600",
+                           "https://images.pexels.com/photos/3433366/pexels-photo-3433366.jpeg?auto=compress&cs=tinysrgb&w=1600"];
+          for (let src of IMGSRCDB) {
+            IMGINTERVALDB[src] = [];
+            IMGTIMEOUTDB[src] = [];
+          }
+          const IMGDB = [];
+          //Initialize image elems
+          for (let src of IMGSRCDB) {
+            let img = document.createElement("img");
+            img.src = src;
+            img.style.position = "absolute";
+            img.style.transform = "translate(-50%,-50%)";
+            img.style.height = "500px";
+            img.style.visibility = "hidden";
+            document.getElementsByClassName("imageholder")[0].append(img);
+            IMGDB.push(img);
+            // TrackElemToCursor(img);
+          }
+          //Define function for momentum
+          function ApplyMomentum(img, deltaX, deltaY, lifetime) {
+            let intervalID = 0;
+            let initializeT = Date.now();
+            //Handle magnitude checks
+            let maxmag = 10;
+            let mag = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+            if (mag > maxmag) {
+              deltaX *= maxmag / mag;
+              deltaY *= maxmag / mag;
+            }
+            //Apply
+            invervalID = setInterval(() => {
+              if (Date.now() - initializeT > lifetime) {
+                clearInterval(intervalID);
+                return;
+              }
+              img.style.left = (parseInt(img.style.left) + deltaX) + "px";
+              img.style.top = (parseInt(img.style.top) + deltaY) + "px";
+              deltaX -= deltaX * .08;
+              deltaY -= deltaY * .08;
+            }, 10);
+            IMGINTERVALDB[img.src].push(intervalID);
+          }
+          //Define spawn in functionality
+          let lastX = 0, lastY = 0, curX = 0, curY = 0, lastSpawnX = 0, lastSpawnY = 0;
+          let imageholder = document.getElementsByClassName("imageholder")[0]
+          imgspawner.addEventListener("mousemove", (e) => {
+            lastX = curX;
+            lastY = curY;
+            curX = e.pageX;
+            curY = e.pageY;
+            let curT = Date.now();
+            let cursor = document.getElementsByClassName("cursor")[0];
+            let spawnDeltaX = curX - lastSpawnX, spawnDeltaY = curY - lastSpawnY;
+            if (Math.sqrt(spawnDeltaX*spawnDeltaX + spawnDeltaY*spawnDeltaY) > 200 && cursor.style.left != "" && cursor.style.top != "") {
+              lastSpawnX = curX;
+              lastSpawnY = curY;
+              let img = IMGDB[curImgIndex];
+              curImgIndex = (curImgIndex + 1) % IMGSRCDB.length;
+              //Clean already possibly running image anims
+              ClearIntTimeDB(img);
+              img.style.transition = "";
+              //Re-initialize - This is necessary so the transition data doesn't holdover from previous anims
+              window.requestAnimationFrame(() => {
+                //Position and bring to top
+                imageholder.append(img);
+                img.style.left = cursor.style.left;
+                img.style.top = cursor.style.top;
+                img.style.opacity = "1";
+                img.style.visibility = "visible";
+                //Apply growth info
+                img.style.transform = "translate(-50%,-50%) scale(0)";
+                window.requestAnimationFrame(() => {
+                  img.style.transition = ".3s all";
+                  img.style.transform = "translate(-50%,-50%) scale(1)";
+                  // window.requestAnimationFrame(() => {
+                  //   img.style
+                  // });
+                });
+                //Queue Momentum & Drop & Hide
+                ApplyMomentum(img, curX-lastX, curY-lastY, 500);
+                //Queue Drop
+                IMGTIMEOUTDB[img.src].push(setTimeout(() => {
+                  img.style.transition = ".5s all ease-in";
+                  window.requestAnimationFrame(() => {
+                    img.style.top = (parseInt(img.style.top) + 700) + "px";
+                    img.style.opacity = "0";
+                  });
+                }, 500));
+                //Queue Hide
+                IMGTIMEOUTDB[img.src].push(setTimeout(() => {
+                  img.style.transition = "";
+                  window.requestAnimationFrame(() => {
+                    img.style.visibility = "hidden";
+                    ClearIntTimeDB(img);
+                  });
+                }, 1000));
+              });
+            }
+          });
+        }
+      </script>
+    </div>
+    <div class="nav">
+      <script>
+        if (true) {
+          let nav = document.getElementsByClassName("nav")[0];
+          let animDuration = .3;
+          let animDelay = .3*.1;
+          function AnimWordUp(div) {
+            let letterIndexCounter = 0;
+            for (let letterdiv of div.childNodes) {
+              //Queue animation
+              letterdiv.style.transform = "translate(0%, -100%)";
+              //Queue reset
+              let animEndDuration = animDuration + (div.childNodes.length-1)*animDelay;
+              setTimeout(() => {
+                console.log("reset");
+                letterdiv.style.transition = "";
+                window.requestAnimationFrame(() => {
+                  letterdiv.style.transform = "translate(0%, 0%)";
+                  window.requestAnimationFrame(() => {
+                    letterdiv.style.transition = "transform " + animDuration + "s ease-in " + (letterIndexCounter*animDelay) + "s";
+                    letterIndexCounter++;
+                  });
+                });
+              }, animEndDuration*1000);
+            }
+          }
+          function CreateWord(word) {
+            let div = document.createElement("div");
+            div.style.display = "flex";
+            // div.style.color = "#e8b297";
+            nav.append(div);
+            let letterIndexCounter = 0;
+            for (let letter of word) {
+              let letterdiv = document.createElement("div");
+              div.append(letterdiv);
+              let let1 = document.createElement("div");
+              let1.innerText = letter;
+              letterdiv.append(let1);
+              let let2 = document.createElement("div");
+              let2.innerText = letter;
+              letterdiv.append(let2);
+              letterdiv.style.transform = "translate(0%, 0%)";
+              letterdiv.style.transition = "transform " + animDuration + "s ease-in " + (letterIndexCounter*animDelay) + "s";
+              letterdiv.style.cursor = "pointer";
+              letterIndexCounter++;
+            }
+            //Next lines are to hide bottom letters in prep for transform animation
+            div.style.height = (div.getBoundingClientRect().height / 2) + "px";
+            div.style.overflow = "hidden";
+            //Handle hover
+            div.addEventListener("mouseenter", () => {
+              AnimWordUp(div);
+            });
+          }
+          CreateWord("ABOUT");
+          CreateWord("PROJECTS");
+          CreateWord("CONTACT");
+          CreateWord("INSTAGRAM");
+        }
+      </script>
+    </div>
+    <div class="cursor">
+      <script>
+        function TrackElemToCursor(elem) {
+          function HandleTick() {
+            if (elem.style.visibility == "hidden")
+              return;
+            let curX = parseInt(elem.style.left);
+            curX = curX ? curX : 0;
+            let curY = parseInt(elem.style.top);
+            curY = curY ? curY : 0;
+            let tarX = parseInt(document.body.dataset.targetX);
+            let tarY = parseInt(document.body.dataset.targetY);
+            //Get default
+            let ratio = .4;
+            let unalteredDeltaX = (tarX - curX);
+            let deltaX = unalteredDeltaX*ratio;
+            let unalteredDeltaY = (tarY - curY);
+            let deltaY = unalteredDeltaY*ratio;
+            let mag = Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+            let originalMag = mag;
+            //Check for minimum movement (so it doesn't slowly inch or possibly be 0)
+            let minmag = 40;
+            if (mag < minmag) {
+              mag = minmag;
+            }
+            //Check if minmag > unalteredMag (as that would overshoot and oscillate)
+            let unalteredMag = Math.sqrt(unalteredDeltaX*unalteredDeltaX + unalteredDeltaY*unalteredDeltaY);
+            if (mag > unalteredMag) {
+              mag = unalteredMag;
+            }
+            //Apply mag
+            deltaX *= mag / unalteredMag;
+            deltaY *= mag / unalteredMag;
+            //Apply transform
+            elem.style.left = (curX + deltaX) + "px";
+            elem.style.top = (curY + deltaY) + "px";
+          }
+          setInterval(HandleTick, 10);
+        }
+        if (true) {
+          let cursor = document.getElementsByClassName("cursor")[0];
+          document.body.addEventListener("mousemove", (e) => {
+            document.body.dataset.targetX = e.pageX;
+            document.body.dataset.targetY = e.pageY;
+          });
+          let lastScrollAmt = 0;
+          window.addEventListener("scroll", () => {
+            let scrollDelta = window.scrollY - lastScrollAmt;
+            document.body.dataset.targetY = parseInt(document.body.dataset.targetY) + scrollDelta;
+            lastScrollAmt = window.scrollY;
+          });
+          document.body.addEventListener("mouseenter", () => {
+            cursor.style.visibility = "visible";
+          });
+          document.body.addEventListener("mouseleave", () => {
+            cursor.style.visibility = "hidden";
+          });
+          TrackElemToCursor(cursor);
+        }
+      </script>
+    </div>
+  </body>
+  
+  <!-- Body Color Changing -->
+  <style>
+    :root * {
+      /* These last 2 properites clean up overshoot weirdness */
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      /* Pause the animation */
+      animation-play-state: paused;
+      /* Bind the animation to scroll */
+      animation-delay: calc(var(--scroll) * -1s);
+    }
+    @keyframes body {
+      0% {
+        background-color: rgb(0,74,98);
+      }
+      15% {
+        background-color: rgb(0,74,98);
+      }
+      35% {
+        background-color: rgb(198,70,14);
+      }
+      40% {
+        background-color: rgb(198,70,14);
+      }
+      60% {
+        background-color: rgb(232,178,151);
+      }
+      65% {
+        background-color: rgb(232,178,151);
+      }
+      85% {
+        background-color: rgb(214,196,163);
+      }
+      100% {
+        background-color: rgb(214,196,163);
+      }
+    }
+    .nav {
+      animation: nav 1s linear;
+      /* These last 2 properites clean up overshoot weirdness */
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      /* Pause the animation */
+      animation-play-state: paused;
+      /* Bind the animation to scroll */
+      animation-delay: calc(var(--scroll) * -1s);
+    }
+    @keyframes nav {
+      0% {
+        color: rgb(232, 178, 151);
+      }
+      15% {
+        color: rgb(232, 178, 151);
+      }
+      35% {
+        color: black;
+      }
+      40% {
+        color: black;
+      }
+      60% {
+        color: rgb(191, 101, 66);
+      }
+      65% {
+        color: rgb(191, 101, 66);
+      }
+      85% {
+        color: rgb(0, 74, 98);
+      }
+      100% {
+        color: rgb(0, 74, 98);
+      }
+    }
+    body {
+      animation: body 1s linear;
+    }
+  </style>
+  <script>
+    document.body.style.height = "400svh";
+    function HandleScroll (e) {
+      document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      //Handle tracking nav and color switch
+      let nav = document.getElementsByClassName("nav")[0];
+      nav.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      nav.style.top = "calc(10rem + " + window.scrollY + "px)";
+      //Handle strikethrough on nav
+      let percScrolled = window.scrollY / window.scrollMaxY;
+      let navNodes = 0;
+      let usefulNodes = [];
+      for (let child of nav.childNodes) {
+        if (child.nodeName == "#text" || child.nodeName == "SCRIPT")
+          continue;
+        navNodes++;
+        usefulNodes.push(child);
+      }
+      let percDeltaPerNav = 1/navNodes+.0001; //Random addition so targetIndex never maxes
+      let targetIndex = Math.floor(percScrolled/percDeltaPerNav);
+      for (let i = 0;i < usefulNodes.length;i++) {
+        if (i == targetIndex) {
+          usefulNodes[i].style.textDecoration = "line-through";
+        } else {
+          usefulNodes[i].style.textDecoration = "none";
+        }
+      }
+      console.log(percScrolled + " :: " + percDeltaPerNav + " :: " + targetIndex);
+    }
+    window.addEventListener('scroll', HandleScroll, false);
+    HandleScroll(null);
+  </script>
+</html>

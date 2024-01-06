@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diffie Hellman Chat</title>
+
+  <!-- Browserify Stuff -->
+  <script src="/src/script/projects/diffiehellmanchat/bundle.js"></script>
+
+  <!-- Include JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Include Socket -->
+  <script>
+    let socket;
+  </script>
+  <script type="module">
+    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+    socket = io.connect("https://portfolioservices.aaronskeels1.repl.co");
+    console.log(socket);
+    InitializeBobCode();
+  </script>
+
+  <!-- Encode/Decode Functions -->
+  <script>
+    function unicodeToB64(str) {
+      // first we use encodeURIComponent to get percent-encoded UTF-8,
+      // then we convert the percent encodings into raw bytes which
+      // can be fed into btoa.
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+              function toSolidBytes(match, p1) {
+                return String.fromCharCode('0x' + p1);
+              }));
+    }
+    function b64ToUnicode(str) {
+      // Going backwards: from bytestream, to percent-encoding, to original string.
+      return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+    }
+    function b64ToArrayBuffer(base64) {
+      let binary_string = window.atob(base64);
+      let len = binary_string.length;
+      let bytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binary_string.charCodeAt(i);
+      }
+      return bytes.buffer;
+    }
+    function arrayBufferToB64( buffer ) {
+      let binary = '';
+      let bytes = new Uint8Array( buffer );
+      let len = bytes.byteLength;
+      for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode( bytes[ i ] );
+      }
+      return window.btoa( binary );
+    }
+  </script>
+
+  <style>
+    img {
+      width: 50%;
+    }
+  </style>
+
+</head>
+<body id="frame">
+
+<div id="state-login" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: red;">
+  <div style="position: absolute; top: 3%; left: 50%; transform: translate(-50%, 0%); background-color: #9e9e9e; padding-right: 1px; font-size: 35px; color: blue; text-align: center; width: 95%;">
+    WARNING: Do not chat with anyone you don't know! They can send custom code to be executed by your browser!
+  </div>
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 70vh; width: 70vw; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center;">
+    <h1>Please Enter a Room Code</h1>
+    <div style="flex-basis: 100%; height: 0%"></div>
+    <input id="roomcode" type="text" placeholder="Code" style="margin-right: 5px;">
+    <button onclick="enterroom();">Enter Room</button>
+  </div>
+</div>
+<script>
+  //Generate crypto keys
+  let alice = CRYPTO.createECDH('secp256k1');
+  alice.generateKeys('base64');
+  let roomcode;
+  let roomrole;
+  
+  function enterroom() {
+    console.log("enterroom");
+    document.getElementById("state-login").style.visibility = "hidden";
+    roomcode = document.getElementById("roomcode").value;
+    socket.emit("diffiehellmanchat-roomcheck", roomcode);
+    socket.on('diffiehellmanchat-roomcheckres', (data) => {
+      console.log("enterroompt2");
+      if(data == "empty"){
+        document.getElementById("state-inroomwaiting").style.visibility = "visible";
+        roomrole = 0;
+      } else if(data == "waiting"){
+        document.getElementById("state-inroomwaiting").style.visibility = "visible";
+        roomrole = 1;
+        socket.emit('diffiehellmanchat-startroom', roomcode);
+      } else if(data == "full"){
+        document.getElementById("state-fullroom").style.visibility = "visible";
+      } else {
+        console.log(data);
+      }
+    });
+  };
+</script>
+
+<div id="state-inroomwaiting" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: #00ffda; visibility: hidden;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 70vh; width: 70vw; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center;">
+    <h1>Waiting on Other Participant...</h1>
+  </div>
+</div>
+  
+<div id="state-fullroom" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: #00ffda; visibility: hidden;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 70vh; width: 70vw; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center;">
+    <h1>Room has already been used. Try a new code...</h1>
+  </div>
+</div>
+
+<div id="state-inroomtogether" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-color: #bbff00; visibility: hidden;">
+  <div style="position: absolute; top: 3%; left: 50%; transform: translate(-50%, 0%); background-color: #9e9e9e; padding-right: 1px; font-size: 35px; color: red; text-align: center; width: 95%">
+    WARNING: Do not chat with anyone you don't know! They can send custom code to be executed by your browser!
+  </div>
+  <div id="chat" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 70vh; width: 70vw; background-color: white; display: flex; flex-direction: column;">
+    <div id="chatbox" style="flex-basis: 94%; flex-grow: 0; flex-shrink: 0; overflow-y: scroll; word-wrap: break-word;">
+      Chat initializing...<br>
+    </div>
+    <div id="bottom" style="flex-basis: 6%; flex-grow: 0; flex-shrink: 0; display: flex; flex-direction: column;">
+      <input id="typing" type="text" style="margin: 0px;" onkeydown="attemptSendMessage(event)">
+      <input id="encprev" type="text" disabled="disabled" style="margin: 0px;" placeholder="Encrypted:"></input>
+    </div>
+  </div>
+</div>
+<script>
+  let bob = {};
+  let sharedsecret;
+
+  //We put the following code inside a function because "socket" doesn't initialize properly in the header in time
+  let InitializeBobCode = function () {
+    socket.on("test", (data) => {
+      console.log("test");
+    });
+    socket.on('startkeytrade', (data) => {
+      newchat("Server: Beginning encryption key trade.")
+      document.getElementById("state-inroomwaiting").style.visibility = "hidden";
+      document.getElementById("state-inroomtogether").style.visibility = "visible";
+      if(roomrole == 0){
+        newchat("Sending public key 1 to server. Waiting for public key 2 from server.")
+        let str = roomcode + ":" + alice.getPublicKey('base64');
+        socket.emit("diffiehellmanchat-pubkeya", str);
+        socket.on("diffiehellmanchat-pubkeyb", (data) => {
+          newchat("Received public key 2 from server.");
+          bob.publicKey = data.replace(roomcode + ":", "");
+          sharedsecret = alice.computeSecret(bob.publicKey, 'base64', 'base64');
+          newchat("Secret code computed. End to End encryption is now active.");
+          newchat("Hover mouse over a message to see the actual encrypted message that was sent over the internet.");
+          newchat("------------------------------");
+        });
+        socket.on("diffiehellmanchat-role1message", (data) => {
+          newchat("Them: <span title='" + data + "'>" + decrypt(data) + "</span>");
+        });
+      } else if(roomrole == 1){
+        newchat("Waiting for public key 1 from server.")
+        socket.on("diffiehellmanchat-pubkeya", (data) => {
+          newchat("Received public key 1 from server. Sending public key 2 to server.");
+          bob.publicKey = data.replace(roomcode + ":", "");
+          let str = roomcode + ":" + alice.getPublicKey('base64');
+          socket.emit("diffiehellmanchat-pubkeyb", str);
+          sharedsecret = alice.computeSecret(bob.publicKey, 'base64', 'base64');
+          newchat("Secret code computed. End to End encryption is now active.");
+          newchat("Hover mouse over a message to see the actual encrypted message that was sent over the internet.");
+          newchat("------------------------------");
+        });
+        socket.on("diffiehellmanchat-role0message", (data) => {
+          newchat("Them: <span title='" + data + "'>" + decrypt(data) + "</span>");
+        });
+      }
+    });
+  }
+
+  function newchat (str) {
+    document.getElementById("chatbox").innerHTML = document.getElementById("chatbox").innerHTML + str + "<br>";
+  }
+
+  function encrypt (str) {
+    return CRYPTOJS.AES.encrypt(str, sharedsecret).toString();
+  }
+  function decrypt (str) {
+    return CRYPTOJS.AES.decrypt(str, sharedsecret).toString(CRYPTOJS.enc.Utf8);
+  }
+
+  function attemptSendMessage (evnt) {
+    if (evnt.keyCode === 13) {
+      let inputelem = document.getElementById("typing");
+      let encprev = document.getElementById("encprev");
+      if (inputelem.value) {
+        let encrypted = encrypt(inputelem.value);
+        if (roomrole == 0)
+          socket.emit("diffiehellmanchat-role0message", roomcode + ":" + encrypted);
+        else
+          socket.emit("diffiehellmanchat-role1message", roomcode + ":" + encrypted)
+        newchat("You: <span title='" + encrypted + "'>" + inputelem.value + "</span>");
+        inputelem.value = "";
+        encprev.value = ""
+      }
+    } else {
+      let inputelem = document.getElementById("typing");
+      let encprev = document.getElementById("encprev");
+      encprev.value = "Encrypted: " + encrypt(inputelem.value);
+    }
+  }
+</script>
+
+</body>
+</html>
