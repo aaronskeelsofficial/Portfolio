@@ -811,8 +811,8 @@ export default function(props) {
               let project35 = new Object();
               project35.name = "Java Knowledge Demos";
               project35.description = "Proof-of-competence and source of notes for myself regarding industry typical Java knowledge. Covers Java concepts, JDBC, JUnit, Maven, Spring, and SQL.";
-              project35.skills = ["Java Concepts, HikariCP, JDBC, JUnit, Maven, Spring, SQL"];
-              project35.keywords = ["java", "hikaricp", "jdbc", "junit", "maven", "spring", "mvc", "sql", "collections", "exception", "generics", "iostream", "multithread", "oop"];
+              project35.skills = ["Java Concepts, CI/CD, HikariCP, JDBC, JUnit, Maven, Spring, SQL"];
+              project35.keywords = ["java", "hikaricp", "jdbc", "junit", "maven", "spring", "mvc", "sql", "collections", "exception", "generics", "iostream", "multithread", "oop", "ci", "cd"];
               project35.date = "2024/01/06";
               project35.icon = "/src/img/projects/java2_min.webp";
               project35.redirect = "https://github.com/aaronskeelsofficial/JavaKnowledgeDemos";
