@@ -4,14 +4,14 @@ import ReactRefresh from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Portfolio/',
+  base: '/Portfolio/', //This is because GitHub imparts this as a prefix due to the repo
   build: {
-	  rollupOptions: {
-		  input: {
-			  aboutme: './aboutme.html',
-			  contact: './contact.html',
-			  index: './index.html',
-			  projects: './projects.html',
+    rollupOptions: {
+      input: {
+	aboutme: './aboutme.html',
+	contact: './contact.html',
+	index: './index.html',
+	projects: './projects.html',
         aroserver: './projects/aroserver.html',
         avionicsreadout: './projects/avionicsreadout.html',
         blackjacksimulator: './projects/blackjacksimulator.html',
@@ -41,8 +41,8 @@ export default defineConfig({
         spacevehicledynamicscontrol: './projects/spacevehicledynamicscontrol.html',
         sqlaccounts: './projects/sqlaccounts.html',
         youtubeanalyzer: './projects/youtubeanalyzer.html',
-		  },
-	  },
+      },
+    },
   },
   plugins: [react(), ReactRefresh()],
   server: {
