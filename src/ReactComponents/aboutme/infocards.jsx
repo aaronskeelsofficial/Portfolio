@@ -115,11 +115,11 @@ export default function(props) {
                 baseelem.append(elem);
                 elems.push(elem);
               }
-              elems[0].childNodes[0].src = "/Portfolio/src/img/aboutme/bg-degrees_min.webp";
-              elems[1].childNodes[0].src = "/Portfolio/src/img/aboutme/bg-graduate_min.webp";
-              elems[2].childNodes[0].src = "/Portfolio/src/img/aboutme/bg-jobs_min.webp";
-              elems[3].childNodes[0].src = "/Portfolio/src/img/aboutme/bg-clubs_min.webp";
-              elems[4].childNodes[0].src = "/Portfolio/src/img/aboutme/bg-awards_min.webp";
+              elems[0].childNodes[0].src = "/src/img/aboutme/bg-degrees_min.webp";
+              elems[1].childNodes[0].src = "/src/img/aboutme/bg-graduate_min.webp";
+              elems[2].childNodes[0].src = "/src/img/aboutme/bg-jobs_min.webp";
+              elems[3].childNodes[0].src = "/src/img/aboutme/bg-clubs_min.webp";
+              elems[4].childNodes[0].src = "/src/img/aboutme/bg-awards_min.webp";
 
               let parentelemid = "`+props.parentid+`";
               parentelemid = (parentelemid == "undefined" || parentelemid == "") ? "root" : "` + props.parentid + `";
