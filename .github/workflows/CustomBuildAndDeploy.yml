@@ -25,11 +25,20 @@ jobs:
         run: |
           npm install
           npm run build
+      - name: Tar Files For Artifact
+        run: |
+          tar \
+            --dereference --hard-dereference \
+            --directory "/dist" \
+            -cvf "/dist/artifact/artifact.tar" \
+            --exclude=.git \
+            --exclude=.github \
+            .
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: 'github-pages'
-          path: 'dist/'
+          path: 'dist/artifact/'
           if-no-files-found: 'error'
       - name: Setup Pages
         uses: actions/configure-pages@v4
