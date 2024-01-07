@@ -26,7 +26,8 @@ jobs:
           npm install
           npm run build
       - name: Modify all /src File Paths
-        run: "find 'dist/' -type f -exec sed -i 's/\/src\//\/prefix\/src\//g' {} +"
+        run: |
+          find 'dist/' -type f -exec sed -i 's/\/src\//\/prefix\/src\//g' {} +
       - name: Generate Folder For Tar
         run: 'mkdir -p dist/artifact'
       - name: Tar Files For Artifact
