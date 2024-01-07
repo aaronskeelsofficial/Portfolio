@@ -25,8 +25,8 @@ jobs:
         run: |
           npm install
           npm run build
-      # Now because our URL's are programmed relative to the root URL, yet GitHub posts our code
-      # at ROOT/REPO/, we need to replace all our links I can remember to think of with the prefixed REPO
+       #Now because our URL's are programmed relative to the root URL, yet GitHub posts our code
+       #at ROOT/REPO/, we need to replace all our links I can remember to think of with the prefixed REPO
       - name: 'Modify all Image src="/ File Paths'
         run: |
           find 'dist/' -type f -exec sed -i 's#src=\"/#src=\"/Portfolio/#g' {} +
