@@ -239,7 +239,7 @@ const BlogHeaderProps_Source = {
 }
 const BlogTextProps_Source = {
   id: "",
-  text: "Executable: <a href=\\\"/src/misc/projects/prolateoblatesimulation/UnzipMeSomewhere.zip\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a>",
+  text: "Executable: <a href=\\\"https://file.io/Wo8Lv6qiEQDz\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a>",
   fontfamily: "",
   fontsize: "",
   fontweight: "",
