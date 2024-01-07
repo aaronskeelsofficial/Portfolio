@@ -42,7 +42,7 @@ jobs:
           find 'dist/' -type f -exec sed -i 's#: \"\/#: \"\/Portfolio\/#g' {} +
       - name: 'Modify Some Other JS Component File Paths 2'
         run: |
-          find 'dist/' -type f -exec sed -i 's#url\(\'\/#url\(\'\/Portfolio\/#g' {} +
+          find 'dist/' -type f -exec sed -i "s#url\(\'\/#url\(\'\/Portfolio\/#g" {} +
           
       - name: Generate Folder For Tar
         run: 'mkdir -p dist/artifact'
