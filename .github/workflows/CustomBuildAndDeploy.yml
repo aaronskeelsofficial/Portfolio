@@ -25,9 +25,12 @@ jobs:
         run: |
           npm install
           npm run build
-      - name: Modify all /src File Paths
+      - name: 'Modify all Image src="/ File Paths'
         run: |
-          find 'dist/' -type f -exec sed -i 's/\/src\//\/Portfolio\/src\//g' {} +
+          find 'dist/' -type f -exec sed -i 's/src="\/"/src="\/Portfolio\//g' {} +
+      - name: 'Modify all Hyperlink href="/ File Paths'
+        run: |
+          find 'dist/' -type f -exec sed -i 's/src="\/"/href="\/Portfolio\//g' {} +
       - name: Generate Folder For Tar
         run: 'mkdir -p dist/artifact'
       - name: Tar Files For Artifact
