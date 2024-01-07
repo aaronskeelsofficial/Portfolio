@@ -11,11 +11,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
       - name: Install Dependencies and Build
         run: |
           npm install
           npm run build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'dist'
+          path: 'dist/'
+          if-no-files-found: 'error'
 
   # Deploy job
   deploy:
