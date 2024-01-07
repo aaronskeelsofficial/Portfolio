@@ -35,6 +35,7 @@ export default defineConfig({
         planeglidecontour: './projects/planeglidecontour.html',
         portfoliomimicrypart1: './projects/portfoliomimicrypart1.html',
         portfoliosite: './projects/portfoliosite.html',
+        portfoliositev1: './projects/portfoliosite/portfoliositev1.html',
         prolateoblatesimulation: './projects/prolateoblatesimulation.html',
         sensitivityanalysis: './projects/sensitivityanalysis.html',
         sourcepanelmethod: './projects/sourcepanelmethod.html',
