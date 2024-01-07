@@ -6,8 +6,14 @@ on:
       - main
 jobs:
   # Build job
-  build:
+  builddeploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -25,30 +31,11 @@ jobs:
           name: 'github-pages'
           path: 'dist/'
           if-no-files-found: 'error'
-
-  # Deploy job
-  deploy:
-    needs: build # Build job dependency
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: read
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: 'github-pages'
-          path: 'dist/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
         with:
           token: ${{ github.token }}
+          artifact_name: 'github-pages'
