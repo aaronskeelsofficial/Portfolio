@@ -25,6 +25,8 @@ jobs:
         run: |
           npm install
           npm run build
+      - name: Generate Folder For Tar
+        run: 'mkdir -p /dist/artifact'
       - name: Tar Files For Artifact
         run: |
           tar \
