@@ -699,8 +699,8 @@ export default function(props) {
 
               let project26 = new Object();
               project26.name = "Portfolio Site";
-              project26.description = "Create a portfolio site to demonstrate my history, my personality, and the projects I've pursued in my past. Uses Replit, Node.js, React, and Vite.";
-              project26.skills = ["Html/JS/CSS","Replit","Node.js","React","Vite"];
+              project26.description = "Create a portfolio site to demonstrate my history, my personality, and the projects I've pursued in my past. Uses GitHub Actions/Pages, Node.js, React, and Vite.";
+              project26.skills = ["Html/JS/CSS","Replit","Node.js","React","Vite","GitHub Actions","GitHub Pages"];
               project26.keywords = ["html","js","javascript","css","portfolio","replit", "node", "react", "vite", "projects", "passion", "education", "school", "degree"];
               project26.date = "2023/05/12";
               project26.icon = "/src/img/projects/web_min.webp";
@@ -807,6 +807,16 @@ export default function(props) {
               project34.redirect = "/projects/planeglidecontour.html";
               project34.previewmedia = "https://github.com/aaronskeelsofficial/PlaneGlideContour/raw/main/Media/PlaneGlideContour%20-%20Heightmap%20Considered.gif";
               projectDatabase.push(project34);
+
+              let project35 = new Object();
+              project35.name = "Java Knowledge Demos";
+              project35.description = "Proof-of-competence and source of notes for myself regarding industry typical Java knowledge. Covers Java concepts, JDBC, JUnit, Maven, Spring, and SQL.";
+              project35.skills = ["Java Concepts, HikariCP, JDBC, JUnit, Maven, Spring, SQL"];
+              project35.keywords = ["java", "hikaricp", "jdbc", "junit", "maven", "spring", "mvc", "sql", "collections", "exception", "generics", "iostream", "multithread", "oop"];
+              project35.date = "2024/01/6";
+              project35.icon = "/src/img/projects/java2_min.webp";
+              project35.redirect = "https://github.com/aaronskeelsofficial/JavaKnowledgeDemos";
+              projectDatabase.push(project35);
             }
           }
         `}</script>
