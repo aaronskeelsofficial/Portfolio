@@ -11,9 +11,9 @@ import Overlay from '../index/overlay'
 
 const NavbarProps = {
   id: "",
-  pages: [{ text: "About Me", href: "/Portfolio/aboutme.html" },
-  { text: "Projects", href: "/Portfolio/projects.html" },
-  { text: "Contact", href: "/Portfolio/contact.html" }],
+  pages: [{ text: "About Me", href: "/aboutme.html" },
+  { text: "Projects", href: "/projects.html" },
+  { text: "Contact", href: "/contact.html" }],
   activepage: 0,
   //
   enablepc: "true",
@@ -36,10 +36,10 @@ const NavbarProps = {
 }
 const NavbarPhoneProps = {
   id: "",
-  pages: [{ text: "Home", href: "/Portfolio/?skipOverlay=true" },
-  { text: "About Me", href: "/Portfolio/aboutme.html" },
-  { text: "Projects", href: "/Portfolio/projects.html" },
-  { text: "Contact", href: "/Portfolio/contact.html" }],
+  pages: [{ text: "Home", href: "/?skipOverlay=true" },
+  { text: "About Me", href: "/aboutme.html" },
+  { text: "Projects", href: "/projects.html" },
+  { text: "Contact", href: "/contact.html" }],
   activepage: 1,
   //
   enablepc: "false",
@@ -148,13 +148,13 @@ const BasicImageProps = {
   heightpc: "60",
   xpc: "0",
   ypc: "3",
-  srcpc: "/Portfolio/src/img/bg-blueovalheader_min.webp",
+  srcpc: "/src/img/bg-blueovalheader_min.webp",
   //
   enablephone: "false"
 }
 const ScrollingBackdropProps_Stars = {
   id: "",
-  src: "/Portfolio/src/img/bg-stars.png",
+  src: "/src/img/bg-stars.png",
   naturalwidth: "1920",
   naturalheight: "1080",
   transition: "left linear 60s",
@@ -168,7 +168,7 @@ const ScrollingBackdropProps_Stars = {
 }
 const ScrollingGeneralBackdropProps = {
   id: "",
-  src: "/Portfolio/src/img/bg-constellationscrop_min.webp",
+  src: "/src/img/bg-constellationscrop_min.webp",
   naturalwidth: "4089",
   naturalheight: "1080",
   transition: "left linear 30s",
@@ -183,7 +183,7 @@ const ScrollingGeneralBackdropProps = {
 const BouncingButtonProps_AboutMePC = {
   id: "",
   text: "About Me",
-  href: "/Portfolio/aboutme.html",
+  href: "/aboutme.html",
   fontfamily: "",
   fontsize: "4vw",
   fontweight: "100",
@@ -207,7 +207,7 @@ const BouncingButtonProps_AboutMePC = {
 const BouncingButtonProps_AboutMePhone = {
   id: "",
   text: "About Me",
-  href: "/Portfolio/aboutme.html",
+  href: "/aboutme.html",
   fontfamily: "",
   fontsize: "10vw",
   fontweight: "100",
@@ -231,7 +231,7 @@ const BouncingButtonProps_AboutMePhone = {
 const BouncingButtonProps_ProjectsPC = {
   id: "",
   text: "Projects",
-  href: "/Portfolio/projects.html",
+  href: "/projects.html",
   fontfamily: "",
   fontsize: "4vw",
   fontweight: "100",
@@ -255,7 +255,7 @@ const BouncingButtonProps_ProjectsPC = {
 const BouncingButtonProps_ProjectsPhone = {
   id: "",
   text: "Projects",
-  href: "/Portfolio/projects.html",
+  href: "/projects.html",
   fontfamily: "",
   fontsize: "10vw",
   fontweight: "100",
@@ -287,7 +287,7 @@ const SpinnableCoinProps = {
   heightpc: "25",
   xpc: "50",
   ypc: "40",
-  srcpc: "/Portfolio/src/img/mecartoonifypin256.png",
+  srcpc: "/src/img/mecartoonifypin256.png",
   //
   enablephone: "true",
   zindexphone: "1",
@@ -297,7 +297,7 @@ const SpinnableCoinProps = {
   heightphone: "50",
   xphone: "50",
   yphone: "45",
-  srcphone: "/Portfolio/src/img/mecartoonifypin256.png",
+  srcphone: "/src/img/mecartoonifypin256.png",
 }
 const OverlayProps = {
   id: "overlay",
@@ -311,7 +311,7 @@ const OverlayProps = {
   xpc: "50",
   ypc: "50",
   // srcpc: "",
-  srcpc: "/Portfolio/src/img/bg-darkgeometry_min.webp",
+  srcpc: "/src/img/bg-darkgeometry_min.webp",
   //
   enablephone: "true",
   zindexphone: "1000",
@@ -321,7 +321,7 @@ const OverlayProps = {
   heightphone: "100",
   xphone: "50",
   yphone: "50",
-  srcphone: "/Portfolio/src/img/bg-darkgeometry_min.webp",
+  srcphone: "/src/img/bg-darkgeometry_min.webp",
 }
 
 export default function App() {
