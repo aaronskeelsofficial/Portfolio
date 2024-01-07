@@ -4,7 +4,7 @@ import ReactRefresh from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Portfolio/', //This is because GitHub imparts this as a prefix due to the repo
+  //base: '/Portfolio/', //This is because GitHub imparts this as a prefix due to the repo
   build: {
     rollupOptions: {
       input: {
