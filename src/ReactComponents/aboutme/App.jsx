@@ -15,7 +15,7 @@ import WhoAmI from './whoami'
 
 const ScrollingBackdropProps_Stars = {
   id: "",
-  src: "/src/img/bg-stars.png",
+  src: "/Portfolio/src/img/bg-stars.png",
   naturalwidth: "1920",
   naturalheight: "1080",
   transition: "left linear 60s",
@@ -38,7 +38,7 @@ const ScrollableBackplateProps = {
   heightpc: "105",
   xpc: "50",
   ypc: "0",
-  srcpc: "/src/img/bg-blogwall.png",
+  srcpc: "/Portfolio/src/img/bg-blogwall.png",
   //
   enablephone: "true",
   zindexphone: "1",
@@ -52,9 +52,9 @@ const ScrollableBackplateProps = {
 }
 const CustomNavbarPCProps = {
   id: "",
-  pages: [{ text: "About Me", href: "/aboutme.html" },
-  { text: "Projects", href: "/projects.html" },
-  { text: "Contact", href: "/contact.html" }],
+  pages: [{ text: "About Me", href: "/Portfolio/aboutme.html" },
+  { text: "Projects", href: "/Portfolio/projects.html" },
+  { text: "Contact", href: "/Portfolio/contact.html" }],
   activepage: 1,
   //
   enablepc: "true",
@@ -70,10 +70,10 @@ const CustomNavbarPCProps = {
 }
 const CustomNavbarPhoneProps = {
   id: "",
-  pages: [{ text: "Home", href: "/?skipOverlay=true" },
-  { text: "About Me", href: "/aboutme.html" },
-  { text: "Projects", href: "/projects.html" },
-  { text: "Contact", href: "/contact.html" }],
+  pages: [{ text: "Home", href: "/Portfolio/?skipOverlay=true" },
+  { text: "About Me", href: "/Portfolio/aboutme.html" },
+  { text: "Projects", href: "/Portfolio/projects.html" },
+  { text: "Contact", href: "/Portfolio/contact.html" }],
   activepage: 2,
   //
   enablepc: "false",
@@ -711,7 +711,7 @@ const ScrollablePageImageProps_Div1 = {
   heightpc: "50",
   xpc: "50",
   ypc: "0",
-  srcpc: "/src/img/bg-rocketdivider.png",
+  srcpc: "/Portfolio/src/img/bg-rocketdivider.png",
   //
   enablephone: "true",
   zindexphone: "1",
@@ -722,7 +722,7 @@ const ScrollablePageImageProps_Div1 = {
   heightphone: "50",
   xphone: "50",
   yphone: "5",
-  srcphone: "/src/img/bg-rocketdivider.png",
+  srcphone: "/Portfolio/src/img/bg-rocketdivider.png",
 }
 const ScrollableRectangularTextProps_Page2_WhoAmI = {
   id: "",

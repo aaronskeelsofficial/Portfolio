@@ -8,10 +8,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-	aboutme: './aboutme.html',
-	contact: './contact.html',
-	index: './index.html',
-	projects: './projects.html',
+	      aboutme: './aboutme.html',
+	      contact: './contact.html',
+	      index: './index.html',
+	      projects: './projects.html',
         aroserver: './projects/aroserver.html',
         avionicsreadout: './projects/avionicsreadout.html',
         blackjacksimulator: './projects/blackjacksimulator.html',

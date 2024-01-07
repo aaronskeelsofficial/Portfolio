@@ -7,9 +7,9 @@ import Scrollbar from '../common/scrollbar'
 
 const NavbarPCProps = {
   id: "",
-  pages: [{ text: "About Me", href: "/aboutme.html" },
-  { text: "Projects", href: "/projects.html" },
-  { text: "Contact", href: "/contact.html" }],
+  pages: [{ text: "About Me", href: "/Portfolio/aboutme.html" },
+  { text: "Projects", href: "/Portfolio/projects.html" },
+  { text: "Contact", href: "/Portfolio/contact.html" }],
   activepage: 3,
   //
   enablepc: "true",
@@ -32,10 +32,10 @@ const NavbarPCProps = {
 }
 const NavbarPhoneProps = {
   id: "",
-  pages: [{ text: "Home", href: "/?skipOverlay=true" },
-  { text: "About Me", href: "/aboutme.html" },
-  { text: "Projects", href: "/projects.html" },
-  { text: "Contact", href: "/contact.html" }],
+  pages: [{ text: "Home", href: "/Portfolio/?skipOverlay=true" },
+  { text: "About Me", href: "/Portfolio/aboutme.html" },
+  { text: "Projects", href: "/Portfolio/projects.html" },
+  { text: "Contact", href: "/Portfolio/contact.html" }],
   activepage: 4,
   //
   enablepc: "false",
@@ -51,7 +51,7 @@ const NavbarPhoneProps = {
 }
 const ScrollingBackdropProps_Stars = {
   id: "",
-  src: "/src/img/bg-stars.png",
+  src: "/Portfolio/src/img/bg-stars.png",
   naturalwidth: "1920",
   naturalheight: "1080",
   transition: "left linear 60s",
