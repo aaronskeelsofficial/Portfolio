@@ -1,6 +1,9 @@
 name: Custom Build And Deploy
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    branches:
+      - main
 jobs:
   # Build job
   build:
@@ -31,11 +34,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     permissions:
+      contents: read
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
@@ -44,3 +50,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        with:
+          token: ${{ github.token }}
