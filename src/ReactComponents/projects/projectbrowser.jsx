@@ -813,9 +813,10 @@ export default function(props) {
               project35.description = "Proof-of-competence and source of notes for myself regarding industry typical Java knowledge. Covers Java concepts, JDBC, JUnit, Maven, Spring, and SQL.";
               project35.skills = ["Java Concepts, HikariCP, JDBC, JUnit, Maven, Spring, SQL"];
               project35.keywords = ["java", "hikaricp", "jdbc", "junit", "maven", "spring", "mvc", "sql", "collections", "exception", "generics", "iostream", "multithread", "oop"];
-              project35.date = "2024/01/6";
+              project35.date = "2024/01/06";
               project35.icon = "/src/img/projects/java2_min.webp";
               project35.redirect = "https://github.com/aaronskeelsofficial/JavaKnowledgeDemos";
+              project35.pinned = true;
               projectDatabase.push(project35);
             }
           }
