@@ -240,7 +240,7 @@ export default function(props) {
               }
 
               bigelem = document.createElement("img");
-              bigelem.src = "/src/img/jigglearrow-big-g.png";
+              bigelem.src = "/Portfolio/src/img/jigglearrow-big-g.png";
               bigelem.style.position = "absolute";
               bigelem.style.top = topMax + "%";
               bigelem.style.left = "50%";
@@ -253,7 +253,7 @@ export default function(props) {
               };
 
               medelem = document.createElement("img");
-              medelem.src = "/src/img/jigglearrow-med-g.png";
+              medelem.src = "/Portfolio/src/img/jigglearrow-med-g.png";
               medelem.style.position = "absolute";
               medelem.style.top = topMax + "%";
               medelem.style.left = "50%";
@@ -266,7 +266,7 @@ export default function(props) {
               };
 
               smallelem = document.createElement("img");
-              smallelem.src = "/src/img/jigglearrow-sma-g.png";
+              smallelem.src = "/Portfolio/src/img/jigglearrow-sma-g.png";
               smallelem.style.position = "absolute";
               smallelem.style.top = topMax + "%";
               smallelem.style.left = "50%";

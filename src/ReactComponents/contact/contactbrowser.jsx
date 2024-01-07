@@ -228,7 +228,7 @@ export default function(props) {
             InitializeDatabase = function(){
               let contact1 = new Object();
               contact1.name = "Phone";
-              contact1.icon = "/src/img/contact/phone.png";
+              contact1.icon = "/Portfolio/src/img/contact/phone.png";
               contact1.ctype = "Reach Me";
               contact1.redirect = "tel:+19513553820";
               contact1.description = "(951)355-3820";
@@ -236,7 +236,7 @@ export default function(props) {
 
               let contact2 = new Object();
               contact2.name = "Email";
-              contact2.icon = "/src/img/contact/email.png";
+              contact2.icon = "/Portfolio/src/img/contact/email.png";
               contact2.ctype = "Reach Me";
               contact2.redirect = "mailto:aaronskeelsofficial@gmail.com";
               contact2.description = "aaronskeelsofficial@gmail.com";
@@ -244,7 +244,7 @@ export default function(props) {
 
               let contact2a = new Object();
               contact2a.name = "GitHub (Gaming)";
-              contact2a.icon = "/src/img/projects/github_min.webp";
+              contact2a.icon = "/Portfolio/src/img/projects/github_min.webp";
               contact2a.ctype = "Know Me";
               contact2a.redirect = "https://github.com/thetealviper";
               contact2a.description = "@TheTealViper";
@@ -252,7 +252,7 @@ export default function(props) {
 
               let contact2b = new Object();
               contact2b.name = "GitHub (Personal)";
-              contact2b.icon = "/src/img/projects/github_min.webp";
+              contact2b.icon = "/Portfolio/src/img/projects/github_min.webp";
               contact2b.ctype = "Know Me";
               contact2b.redirect = "https://github.com/aaronskeelsofficial";
               contact2b.description = "@AaronSkeelsOfficial";
@@ -260,7 +260,7 @@ export default function(props) {
 
               let contact3 = new Object();
               contact3.name = "LinkedIn";
-              contact3.icon = "/src/img/contact/linkedin.png";
+              contact3.icon = "/Portfolio/src/img/contact/linkedin.png";
               contact3.ctype = "Know Me";
               contact3.redirect = "https://www.linkedin.com/in/aaronskeels";
               contact3.description = "@AaronSkeels";
@@ -268,7 +268,7 @@ export default function(props) {
 
               let contact4 = new Object();
               contact4.name = "Instagram";
-              contact4.icon = "/src/img/contact/ig.png";
+              contact4.icon = "/Portfolio/src/img/contact/ig.png";
               contact4.ctype = "Know Me";
               contact4.redirect = "https://www.instagram.com/aaronskeels/";
               contact4.description = "@AaronSkeels";
@@ -276,7 +276,7 @@ export default function(props) {
 
               let contact5 = new Object();
               contact5.name = "Discord";
-              contact5.icon = "/src/img/contact/discord.png";
+              contact5.icon = "/Portfolio/src/img/contact/discord.png";
               contact5.ctype = "Befriend Me";
               contact5.redirect = "https://www.discordapp.com/users/142418013394698240";
               contact5.description = "@TheTealViper";
@@ -284,7 +284,7 @@ export default function(props) {
 
               let contact6 = new Object();
               contact6.name = "Twitter";
-              contact6.icon = "/src/img/contact/twitter.png";
+              contact6.icon = "/Portfolio/src/img/contact/twitter.png";
               contact6.ctype = "Befriend Me";
               contact6.redirect = "https://twitter.com/Aaron_Skeels";
               contact6.description = "@Aaron_Skeels";

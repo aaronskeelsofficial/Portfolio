@@ -184,7 +184,7 @@ export default function(props) {
                     elem.style.boxShadow = "0px 0px 10px 0px #ecfa18";
                   });
                   let pinned = document.createElement("img");
-                  pinned.src = "/src/img/projects/thumbtack.png";
+                  pinned.src = "/Portfolio/src/img/projects/thumbtack.png";
                   pinned.title = "This is a project I'm especially proud of or think is important!";
                   pinned.style.position = "absolute";
                   pinned.style.left = "50%";
@@ -409,7 +409,7 @@ export default function(props) {
               project1.skills = ["Html/JS/CSS", "Childhood Innocence"];
               project1.keywords = ["html","css","kid"];
               project1.date = "2009/12/21";
-              project1.icon = "/src/img/projects/web_min.webp";
+              project1.icon = "/Portfolio/src/img/projects/web_min.webp";
               project1.redirect = "http://www.neopets.com/~dahaux";
               projectDatabase.push(project1);
   
@@ -419,7 +419,7 @@ export default function(props) {
               project2.skills = ["Java", "Eclipse", "Creativity", "Community Building", "Tech Support (Questions/Bug Fixes/Updates)"];
               project2.keywords = ["minecraft","java","kid","spigot","plugin","mod"];
               project2.date = "2015/10/24";
-              project2.icon = "/src/img/projects/spigot_min.webp";
+              project2.icon = "/Portfolio/src/img/projects/spigot_min.webp";
               project2.redirect = "https://www.spigotmc.org/resources/authors/thetealviper.116592";
               project2.pinned = true;
               project2.previewmedia = "https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image?spigotuserid=116592&width=350&height=60&fontsize=30"
@@ -431,7 +431,7 @@ export default function(props) {
               project3.skills = ["Java", "Eclipse", "Creativity", "Innovation"];
               project3.keywords = ["minecraft","java","spigot","plugin","mod","password"];
               project3.date = "2017/06/24";
-              project3.icon = "/src/img/projects/spigot_min.webp";
+              project3.icon = "/Portfolio/src/img/projects/spigot_min.webp";
               project3.redirect = "https://www.spigotmc.org/resources/pinplease.14011/";
               projectDatabase.push(project3);
   
@@ -441,7 +441,7 @@ export default function(props) {
               project4.skills = ["Java", "Eclipse", "Creativity"];
               project4.keywords = ["minecraft","java","spigot","faction","shop","plugin","mod"];
               project4.date = "2017/06/24";
-              project4.icon = "/src/img/projects/spigot_min.webp";
+              project4.icon = "/Portfolio/src/img/projects/spigot_min.webp";
               project4.redirect = "https://www.spigotmc.org/resources/factionsshop-1-14-drag-n-drop.42752/";
               projectDatabase.push(project4);
   
@@ -451,8 +451,8 @@ export default function(props) {
               project4a.skills = ["Arduino", "Java", "Critical Thinking", "Cross Device Communication", "Image Recognition (External Library)"];
               project4a.keywords = ["arduino","java","laser","laptop","facial recognition","track","serial","project","citrus","college","final","physics"];
               project4a.date = "2018/06/05";
-              project4a.icon = "/src/img/projects/arduino_min.webp";
-              project4a.redirect = "/projects/lasereyetracker.html";
+              project4a.icon = "/Portfolio/src/img/projects/arduino_min.webp";
+              project4a.redirect = "/Portfolio/projects/lasereyetracker.html";
               project4a.previewmedia = "https://i.imgur.com/7Zq71Mg.png";
               projectDatabase.push(project4a);
   
@@ -462,7 +462,7 @@ export default function(props) {
               project5.skills = ["FL Studio", "Vocal Production", "Instrumental Synthesis"];
               project5.keywords = ["soundcloud","fl","studio","12","song"];
               project5.date = "2018/08/23";
-              project5.icon = "/src/img/projects/soundcloud_min.webp";
+              project5.icon = "/Portfolio/src/img/projects/soundcloud_min.webp";
               project5.redirect = "https://soundcloud.com/aaron-skeels/tracks";
               projectDatabase.push(project5);
   
@@ -472,7 +472,7 @@ export default function(props) {
               project6.skills = ["Blender", "Maintaining Dignity Through Embarrassment"];
               project6.keywords = ["knife","crate","model"];
               project6.date = "2019/08/31";
-              project6.icon = "/src/img/projects/blender_min.webp";
+              project6.icon = "/Portfolio/src/img/projects/blender_min.webp";
               project6.redirect = "https://imgur.com/a/tZz5Vfd";
               project6.previewmedia = "https://i.imgur.com/3WVudEP.png";
               projectDatabase.push(project6);
@@ -483,8 +483,8 @@ export default function(props) {
               project7.skills = ["Unity", "Animation/State Management", "Game Logic"];
               project7.keywords = ["video game","unity","knight","slide","state","animate","animation","2d","platformer"];
               project7.date = "2019/12/28";
-              project7.icon = "/src/img/projects/unity_min.webp";
-              project7.redirect = "/projects/knightplatformer.html";
+              project7.icon = "/Portfolio/src/img/projects/unity_min.webp";
+              project7.redirect = "/Portfolio/projects/knightplatformer.html";
               project7.previewmedia = "https://i.imgur.com/uuAaeEN.gif";
               projectDatabase.push(project7);
   
@@ -494,9 +494,9 @@ export default function(props) {
               project8.skills = ["Arduino", "Simulink", "Per-Bit Accuracy/Tolerance"];
               project8.keywords = ["avionics","cpp","assignment","college","arduino","matlab","simulink","schematic"];
               project8.date = "2020/04/29";
-              project8.icon = "/src/img/projects/arduino_min.webp";
-              project8.redirect = "/projects/avionicsreadout.html";
-              project8.previewmedia = "/src/img/projects/avionicsreadout/schematic.png";
+              project8.icon = "/Portfolio/src/img/projects/arduino_min.webp";
+              project8.redirect = "/Portfolio/projects/avionicsreadout.html";
+              project8.previewmedia = "/Portfolio/src/img/projects/avionicsreadout/schematic.png";
               projectDatabase.push(project8);
   
               let project9 = new Object();
@@ -505,10 +505,10 @@ export default function(props) {
               project9.skills = ["Unreal Engine", "Blender", "C++", "Animation/Rigging", "Game Logic"];
               project9.keywords = ["video game","unreal engine","bean","model","blender","animate","animation","rig","texture","level design","logic","c++"];
               project9.date = "2020/09/25";
-              project9.icon = "/src/img/projects/unrealengine_min.webp";
-              project9.redirect = "/projects/fallguysclone.html";
+              project9.icon = "/Portfolio/src/img/projects/unrealengine_min.webp";
+              project9.redirect = "/Portfolio/projects/fallguysclone.html";
               project9.pinned = true;
-              project9.previewmedia = "/src/img/projects/fallguysclone/rig.png";
+              project9.previewmedia = "/Portfolio/src/img/projects/fallguysclone/rig.png";
               projectDatabase.push(project9);
   
               let project10 = new Object();
@@ -517,9 +517,9 @@ export default function(props) {
               project10.skills = ["Leadership", "MatLab", "SimuLink", "Moderate Controls Comprehension", "Cooperation"];
               project10.keywords = ["control","cpp","assignment","college","matlab","simulink","simulation"];
               project10.date = "2020/11/01";
-              project10.icon = "/src/img/projects/matlab_min.webp";
-              project10.redirect = "/projects/sensitivityanalysis.html";
-              project10.previewmedia = "/src/img/projects/sensitivityanalysis/model.png";
+              project10.icon = "/Portfolio/src/img/projects/matlab_min.webp";
+              project10.redirect = "/Portfolio/projects/sensitivityanalysis.html";
+              project10.previewmedia = "/Portfolio/src/img/projects/sensitivityanalysis/model.png";
               projectDatabase.push(project10);
   
               let project11 = new Object();
@@ -528,9 +528,9 @@ export default function(props) {
               project11.skills = ["MatLab", "Basic Linear Algebra Comprehension", "Critical Thought"];
               project11.keywords = ["fluid","cpp","assignment","college","final","matlab","simulation","linear algebra"];
               project11.date = "2020/11/23";
-              project11.icon = "/src/img/projects/matlab_min.webp";
-              project11.redirect = "/projects/sourcepanelmethod.html";
-              project11.previewmedia = "/src/img/projects/sourcepanelmethod/data1.png";
+              project11.icon = "/Portfolio/src/img/projects/matlab_min.webp";
+              project11.redirect = "/Portfolio/projects/sourcepanelmethod.html";
+              project11.previewmedia = "/Portfolio/src/img/projects/sourcepanelmethod/data1.png";
               projectDatabase.push(project11);
   
               let project12 = new Object();
@@ -539,8 +539,8 @@ export default function(props) {
               project12.skills = ["Leadership", "Freeflyer", "Basic Orbital Mechanics Comprehension", "Creativity"];
               project12.keywords = ["freeflyer","earth","ceres","rocket","mission"];
               project12.date = "2020/12/04";
-              project12.icon = "/src/img/projects/freeflyer_min.webp";
-              project12.redirect = "/projects/orbitalmechanicsfinal.html";
+              project12.icon = "/Portfolio/src/img/projects/freeflyer_min.webp";
+              project12.redirect = "/Portfolio/projects/orbitalmechanicsfinal.html";
               project12.previewmedia = "https://i.imgur.com/Y3gA3eo.png";
               projectDatabase.push(project12);
   
@@ -550,7 +550,7 @@ export default function(props) {
               project13.skills = ["Excel", "Basic Algebra", "LOTS of 'Approximations'"];
               project13.keywords = ["structure","cpp","assignment","college","excel"];
               project13.date = "2020/12/06";
-              project13.icon = "/src/img/projects/excel_min.webp";
+              project13.icon = "/Portfolio/src/img/projects/excel_min.webp";
               project13.redirect = "https://docs.google.com/spreadsheets/d/1R5sVkujBHot5rgoI2Wo0gz4RW5Jw-Th_CP4TXXG_d5c/edit?usp=sharing";
               projectDatabase.push(project13);
   
@@ -560,9 +560,9 @@ export default function(props) {
               project14.skills = ["Unreal Engine", "Modest Linear Algebra Comprehension", "Basic Orbital Mechanics Comprehension"];
               project14.keywords = ["ue4","unreal engine","simulation","orbital mechanics","linear algebra","c++"];
               project14.date = "2021/03/17";
-              project14.icon = "/src/img/projects/unrealengine_min.webp";
-              project14.redirect = "/projects/prolateoblatesimulation.html";
-              project14.previewmedia = "/src/img/projects/prolateoblatesimulation/Sample1.png";
+              project14.icon = "/Portfolio/src/img/projects/unrealengine_min.webp";
+              project14.redirect = "/Portfolio/projects/prolateoblatesimulation.html";
+              project14.previewmedia = "/Portfolio/src/img/projects/prolateoblatesimulation/Sample1.png";
               projectDatabase.push(project14);
 
               let project15a = new Object();
@@ -571,8 +571,8 @@ export default function(props) {
               project15a.skills = ["MatLab", "SimuLink", "Advanced Linear Algebra Comprehension", "Moderate Dynamics Comprehension", "Collaboration"];
               project15a.keywords = ["dynamics","control","cpp","assignment","final","college","matlab","simulink","linear algebra","team"];
               project15a.date = "2021/05/21";
-              project15a.icon = "/src/img/projects/matlab_min.webp";
-              project15a.redirect = "/projects/spacevehicledynamicscontrol.html";
+              project15a.icon = "/Portfolio/src/img/projects/matlab_min.webp";
+              project15a.redirect = "/Portfolio/projects/spacevehicledynamicscontrol.html";
               projectDatabase.push(project15a);
 
               let project15b = new Object();
@@ -581,9 +581,9 @@ export default function(props) {
               project15b.skills = ["Discord.js", "JS", "Replit", "Critical Thinking"];
               project15b.keywords = ["aro","cal poly","cpp","discord","server","bot","college","management","backend"];
               project15b.date = "2021/07/24";
-              project15b.icon = "/src/img/projects/discord_min.webp";
-              project15b.redirect = "/projects/aroserver.html";
-              project15b.previewmedia = "/src/img/projects/aroserver/1.png";
+              project15b.icon = "/Portfolio/src/img/projects/discord_min.webp";
+              project15b.redirect = "/Portfolio/projects/aroserver.html";
+              project15b.previewmedia = "/Portfolio/src/img/projects/aroserver/1.png";
               projectDatabase.push(project15b);
   
               let project15 = new Object();
@@ -592,9 +592,9 @@ export default function(props) {
               project15.skills = ["Html/JS/CSS", "Node.js", "SQLite", "SHA-256"];
               project15.keywords = ["node.js","mmo","html","sql","sqlite","login","sha256","hash","password"];
               project15.date = "2021/07/29";
-              project15.icon = "/src/img/projects/web_min.webp";
-              project15.redirect = "/projects/sqlaccounts.html";
-              project15.previewmedia = "/src/img/projects/sqlaccounts/demo.png";
+              project15.icon = "/Portfolio/src/img/projects/web_min.webp";
+              project15.redirect = "/Portfolio/projects/sqlaccounts.html";
+              project15.previewmedia = "/Portfolio/src/img/projects/sqlaccounts/demo.png";
               projectDatabase.push(project15);
   
               let project16 = new Object();
@@ -603,9 +603,9 @@ export default function(props) {
               project16.skills = ["Html/JS/CSS", "Node.js", "AES-256", "ECDH", "Browserify", "Crypto.js"];
               project16.keywords = ["html","js","javascript","node.js","aes256","aes-256","chat","encryption","cipher","ecdh","elliptic","curve","diffie","hellman","browserify","crypto","crypto-js"];
               project16.date = "2021/07/31";
-              project16.icon = "/src/img/projects/js_min.webp";
-              project16.redirect = "/projects/diffiehellmanchat.html";
-              project16.previewmedia = "/src/img/projects/diffiehellmanchat/demo.png";
+              project16.icon = "/Portfolio/src/img/projects/js_min.webp";
+              project16.redirect = "/Portfolio/projects/diffiehellmanchat.html";
+              project16.previewmedia = "/Portfolio/src/img/projects/diffiehellmanchat/demo.png";
               projectDatabase.push(project16);
   
               let project18 = new Object();
@@ -614,8 +614,8 @@ export default function(props) {
               project18.skills = ["Leadership", "Technical Writing", "Critical Thinking", "Raspberry Pi", "C++", "Repo Forking"];
               project18.keywords = ["jpl","jet propulsion laboratory","team","cpp","college","cubestep","satellite","project","report"];
               project18.date = "2022/05/09";
-              project18.icon = "/src/img/projects/word_min.webp";
-              project18.redirect = "/projects/cubestepreport.html";
+              project18.icon = "/Portfolio/src/img/projects/word_min.webp";
+              project18.redirect = "/Portfolio/projects/cubestepreport.html";
               project18.pinned = true;
               project18.previewmedia = "https://i.imgur.com/LIxbHIE.png";
               projectDatabase.push(project18);
@@ -626,8 +626,8 @@ export default function(props) {
               project19.skills = ["Html/JS/CSS", "Node.js", "Replit", "UptimeRobot", "Windows Scheduler", "Batch/CURL"];
               project19.keywords = ["dead","deadman","switch","ping","replit","uptimerobot","html","node","js"];
               project19.date = "2022/05/15";
-              project19.icon = "/src/img/projects/replit_min.webp";
-              project19.redirect = "/projects/deadmansswitch.html";
+              project19.icon = "/Portfolio/src/img/projects/replit_min.webp";
+              project19.redirect = "/Portfolio/projects/deadmansswitch.html";
               projectDatabase.push(project19);
   
               let project20 = new Object();
@@ -636,10 +636,10 @@ export default function(props) {
               project20.skills = ["Leadership", "Technical Writing", "Deep Thermal Load Anlys. & Sim.", "Basic Electrical Load Anlys", "Critical Thinking"];
               project20.keywords = ["college","cpp","final","assignment","team","emrys","presentation","powerpoint","space"];
               project20.date = "2022/05/18";
-              project20.icon = "/src/img/projects/rocket_min.webp";
-              project20.redirect = "/projects/emrysspacedesignfinal.html";
+              project20.icon = "/Portfolio/src/img/projects/rocket_min.webp";
+              project20.redirect = "/Portfolio/projects/emrysspacedesignfinal.html";
               project20.pinned = true;
-              project20.previewmedia = "/src/img/projects/emrysspacedesignfinal/Example.png";
+              project20.previewmedia = "/Portfolio/src/img/projects/emrysspacedesignfinal/Example.png";
               projectDatabase.push(project20);
   
               let project21 = new Object();
@@ -648,9 +648,9 @@ export default function(props) {
               project21.skills = ["Html/JS/CSS", "Node.js", "External Library Incorporation", "Music Theory"];
               project21.keywords = ["html","js","javascript","css","replit","tonejs","piano","music","violin","guitar","nodejs"];
               project21.date = "2022/08/18";
-              project21.icon = "/src/img/projects/replit_min.webp";
-              project21.redirect = "/projects/musicutility.html";
-              project21.previewmedia = "/src/img/projects/musicutility/Example.png";
+              project21.icon = "/Portfolio/src/img/projects/replit_min.webp";
+              project21.redirect = "/Portfolio/projects/musicutility.html";
+              project21.previewmedia = "/Portfolio/src/img/projects/musicutility/Example.png";
               projectDatabase.push(project21);
   
               let project22 = new Object();

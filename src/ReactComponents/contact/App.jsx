@@ -74,7 +74,7 @@ const ScrollableBackplateProps = {
   heightpc: "105",
   xpc: "50",
   ypc: "0",
-  srcpc: "/src/img/bg-blogwall.png",
+  srcpc: "/Portfolio/src/img/bg-blogwall.png",
   //
   enablephone: "true",
   zindexphone: "1",
