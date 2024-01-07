@@ -26,13 +26,13 @@ jobs:
           npm install
           npm run build
       - name: Generate Folder For Tar
-        run: 'mkdir -p /dist/artifact'
+        run: 'mkdir -p dist/artifact'
       - name: Tar Files For Artifact
         run: |
           tar \
             --dereference --hard-dereference \
-            --directory "/dist" \
-            -cvf "/dist/artifact/artifact.tar" \
+            --directory "dist/" \
+            -cvf "dist/artifact/artifact.tar" \
             --exclude=.git \
             --exclude=.github \
             .
