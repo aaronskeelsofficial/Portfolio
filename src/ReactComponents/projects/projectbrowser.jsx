@@ -623,10 +623,10 @@ export default function(props) {
               let project19 = new Object();
               project19.name = "Deadman's Switch";
               project19.description = "Made my desktop ping a deadman's switch that will release a message with passwords/goodbyes when I die.";
-              project19.skills = ["Html/JS/CSS", "Node.js", "Replit", "UptimeRobot", "Windows Scheduler", "Batch/CURL"];
-              project19.keywords = ["dead","deadman","switch","ping","replit","uptimerobot","html","node","js"];
+              project19.skills = ["CI/CD", "Html/JS/CSS", "Node.js", "Git", "Adaptable.io", "UptimeRobot", "Windows Scheduler", "Batch/CURL"];
+              project19.keywords = ["dead","deadman","switch","ping","replit","uptimerobot","html","node","js","ci","cd","adaptable.io", "github"];
               project19.date = "2022/05/15";
-              project19.icon = "/src/img/projects/replit_min.webp";
+              project19.icon = "/src/img/projects/nodejs_min.webp";
               project19.redirect = "/projects/deadmansswitch.html";
               projectDatabase.push(project19);
   
