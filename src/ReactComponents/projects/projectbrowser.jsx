@@ -744,8 +744,8 @@ export default function(props) {
               let project30a = new Object();
               project30a.name = "Dynamic GET TextToImage";
               project30a.description = "Developed service which dynamically generates a text-filled image for GitHub embeds based off GET request parameters. For some reason this doesn't already exist?";
-              project30a.skills = ["JS, Node.js, Express (NPM), Sync-Fetch (NPM), Canvas (NPM), Replit"];
-              project30a.keywords = ["js", "node", "node.js", "get", "texttoimage", "dynamic", "generate", "github", "express", "sync", "fetch", "canvas"];
+              project30a.skills = ["JS, Node.js, CI/CD, Express (NPM), Sync-Fetch (NPM), Canvas (NPM), Git, Adaptable.io"];
+              project30a.keywords = ["js", "node", "node.js", "get", "texttoimage", "dynamic", "generate", "github", "express", "sync", "fetch", "canvas", "replit", "adaptable.io", "ci", "cd"];
               project30a.date = "2023/07/26";
               project30a.icon = "/src/img/projects/nodejs_min.webp";
               project30a.redirect = "/projects/dynamicgettexttoimage.html";
