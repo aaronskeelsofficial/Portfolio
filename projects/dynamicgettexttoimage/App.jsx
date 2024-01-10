@@ -137,10 +137,10 @@ const BlogImageProps_Example = {
   id: "",
   //
   enablepc: "true",
-  srcpc: "https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image?text=THIS IS DYNAMICALLY GENERATED: " + parseInt(Math.random()*100) + "!&width=800&height=100&fontsize=30",
+  srcpc: "https://dynamicgettexttoimage.adaptable.app/generate-image?text=THIS IS DYNAMICALLY GENERATED: " + parseInt(Math.random()*100) + "!&width=800&height=100&fontsize=30",
   //
   enablephone: "true",
-  srcphone: "https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image?text=THIS IS DYNAMICALLY GENERATED: " + parseInt(Math.random()*100) + "!&width=800&height=100&fontsize=30"
+  srcphone: "https://dynamicgettexttoimage.adaptable.app/generate-image?text=THIS IS DYNAMICALLY GENERATED: " + parseInt(Math.random()*100) + "!&width=800&height=100&fontsize=30"
 }
 const BlogHeaderProps_Purpose = {
   id: "",
@@ -182,7 +182,7 @@ const BlogHeaderProps_Functionality = {
 }
 const BlogTextProps_Functionality = {
   id: "",
-  text: "I wasn't trying to make a crazily general function filled utility and moreso was just making something basic which fit the niche needs of myself at the moment. So it's not crazy capable, but it does what I needed it to do to advertise my Spigot downloads on my GitHub with a dynamic image embed and is open source so if people need more then they can just add it. To use the service, the base URL path is: 'https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image'. From here, the following parameters can be specified:<br><br><p class=\\\"blogtextlist\\\">- text: HTML encoded string representing the text to be displayed</p><br><p class=\\\"blogtextlist\\\">- spigotuserid: Niche functionality tied to showing a Spigot user's total downloads as text</p><br><p class=\\\"blogtextlist\\\">- width: width of the image in pixels</p><br><p class=\\\"blogtextlist\\\">- height: height of the image in pixels</p><br><p class=\\\"blogtextlist\\\">- fontsize: font size of the text in pixels</p>",
+  text: "I wasn't trying to make a crazily general function filled utility and moreso was just making something basic which fit the niche needs of myself at the moment. So it's not crazy capable, but it does what I needed it to do to advertise my Spigot downloads on my GitHub with a dynamic image embed and is open source so if people need more then they can just add it. To use the service, the base URL path is: 'https://dynamicgettexttoimage.adaptable.app/generate-image'. From here, the following parameters can be specified:<br><br><p class=\\\"blogtextlist\\\">- text: HTML encoded string representing the text to be displayed</p><br><p class=\\\"blogtextlist\\\">- spigotuserid: Niche functionality tied to showing a Spigot user's total downloads as text</p><br><p class=\\\"blogtextlist\\\">- width: width of the image in pixels</p><br><p class=\\\"blogtextlist\\\">- height: height of the image in pixels</p><br><p class=\\\"blogtextlist\\\">- fontsize: font size of the text in pixels</p>",
   fontfamily: "",
   fontsize: "",
   fontweight: "",

@@ -422,7 +422,7 @@ export default function(props) {
               project2.icon = "/src/img/projects/spigot_min.webp";
               project2.redirect = "https://www.spigotmc.org/resources/authors/thetealviper.116592";
               project2.pinned = true;
-              project2.previewmedia = "https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image?spigotuserid=116592&width=350&height=60&fontsize=30"
+              project2.previewmedia = "https://dynamicgettexttoimage.adaptable.app/generate-image?spigotuserid=116592&width=350&height=60&fontsize=30"
               projectDatabase.push(project2);
   
               let project3 = new Object();
@@ -749,7 +749,7 @@ export default function(props) {
               project30a.date = "2023/07/26";
               project30a.icon = "/src/img/projects/nodejs_min.webp";
               project30a.redirect = "/projects/dynamicgettexttoimage.html";
-              project30a.previewmedia = "https://githubdynamicgettexttoimage.aaronskeels2.repl.co/generate-image?text=THIS%20IS%20DYNAMICALLY%20GENERATED:%20" + parseInt(Math.random()*100) +"!&width=800&height=100&fontsize=30";
+              project30a.previewmedia = "https://dynamicgettexttoimage.adaptable.app/generate-image?text=THIS%20IS%20DYNAMICALLY%20GENERATED:%20" + parseInt(Math.random()*100) +"!&width=800&height=100&fontsize=30";
               projectDatabase.push(project30a);
 
               let project30 = new Object();
