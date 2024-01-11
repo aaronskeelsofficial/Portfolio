@@ -260,7 +260,7 @@ const BlogHeaderProps_Source = {
 }
 const BlogTextProps_Source = {
   id: "",
-  text: "Demo: <a href=\\\"/projects/diffiehellmanchat/demo.html\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a><br>Socket.io Relay Server: <a href=\\\"https://replit.com/@AaronSkeels1/portfolioservices\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a>",
+  text: "Demo: <a href=\\\"/projects/diffiehellmanchat/demo.html\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a><br>Socket.io Relay Server: <a href=\\\"https://github.com/aaronskeelsofficial/PortfolioServices\\\" style=\\\"color: rgb(115,204,168)\\\">Here</a>",
   fontfamily: "",
   fontsize: "",
   fontweight: "",
