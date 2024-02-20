@@ -43,6 +43,7 @@ export default defineConfig({
         spacevehicledynamicscontrol: './projects/spacevehicledynamicscontrol.html',
         sqlaccounts: './projects/sqlaccounts.html',
         sqlaccounts_demo: './projects/sqlaccounts/demo.html',
+        twoweekdrawing: './projects/twoweekdrawing.html',
         youtubeanalyzer: './projects/youtubeanalyzer.html',
       },
     },

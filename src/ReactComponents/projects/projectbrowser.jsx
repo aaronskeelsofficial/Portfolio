@@ -818,6 +818,19 @@ export default function(props) {
               project35.redirect = "https://github.com/aaronskeelsofficial/JavaKnowledgeDemos";
               project35.pinned = true;
               projectDatabase.push(project35);
+
+              //https://imgur.com/a/JV559Zh - Compiled summary
+              //https://imgur.com/a/2aIH8b2 - Raw pages
+              let project36 = new Object();
+              project36.name = "2 Week Drawing Progress";
+              project36.description = "Invested two weeks into improving my drawing skills, and to quite high levels of success in my opinion.";
+              project36.skills = ["Line Work, Human Anatomy, Sketchwork, Loomis Method"];
+              project36.keywords = ["line", "work", "human", "anatomy", "sketch", "loomis", "draw", "progress", "two week"];
+              project36.date = "2024/02/20";
+              project36.icon = "/src/img/projects/art_min.webp";
+              project36.redirect = "/projects/twoweekdrawing";
+              project36.previewmedia = "https://imgur.com/5Hs4prg.png";
+              projectDatabase.push(project36);
             }
           }
         `}</script>
