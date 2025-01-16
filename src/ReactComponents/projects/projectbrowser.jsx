@@ -831,6 +831,18 @@ export default function(props) {
               project36.redirect = "/projects/twoweekdrawing";
               project36.previewmedia = "https://imgur.com/5Hs4prg.png";
               projectDatabase.push(project36);
+
+              let project37 = new Object();
+              project37.name = "Aaron's Spotify Stats";
+              project37.description = "Break Spotify's data and analytics monopoly and access your stats at any time from any time.";
+              project37.skills = ["Rust, CI/CD, SQLite, Web Development, Encryption, Hashing"];
+              project37.keywords = ["rust", "ci", "cd", "ci/cd", "sql", "sqlite", "web", "development", "javascript", "js", "html", "css", "encrypt", "hash"];
+              project37.date = "2025/01/15";
+              project37.icon = "/src/img/projects/rust_min.webp";
+              project37.redirect = "/projects/aaronsspotifystats.html";
+              project37.previewmedia = "https://i.imgur.com/cLbCH9u.png";
+              project37.pinned = true;
+              projectDatabase.push(project37);
             }
           }
         `}</script>

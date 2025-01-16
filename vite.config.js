@@ -13,6 +13,7 @@ export default defineConfig({
         index: './index.html',
         projects: './projects.html',
         aroserver: './projects/aroserver.html',
+        aaronsspotifystats: './projects/aaronsspotifystats.html',
         avionicsreadout: './projects/avionicsreadout.html',
         blackjacksimulator: './projects/blackjacksimulator.html',
         bluebrainplanet: './projects/bluebrainplanet.html',
