@@ -843,6 +843,17 @@ export default function(props) {
               project37.previewmedia = "https://i.imgur.com/cLbCH9u.png";
               project37.pinned = true;
               projectDatabase.push(project37);
+
+              let project38 = new Object();
+              project38.name = "Composable Codecs";
+              project38.description = "Create infinitely, recursively composable codecs for saving/loading/modifying/extracting info from custom java objects.";
+              project38.skills = ["Java, Codec, Builder Pattern, JSON"];
+              project38.keywords = ["java", "codec", "composition", "builder", "json", "bson", "mod"];
+              project38.date = "2026/10/7";
+              project38.icon = "/src/img/projects/java2_min.webp";
+              project38.redirect = "https://github.com/aaronskeelsofficial/Composable-Codec";
+              project38.previewmedia = "https://i.imgur.com/yviGkM0.png";
+              projectDatabase.push(project38);
             }
           }
         `}</script>
